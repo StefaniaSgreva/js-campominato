@@ -27,7 +27,7 @@ function play() {
     const NUM_BOMBS = 16;
     const bombsPosition = [];
 
-    let score = 1;
+    let score = 0;
 
     // 3 LEVELS GRIDS
     let cellNum;
