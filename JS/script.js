@@ -45,8 +45,9 @@ function play() {
         break; 
         case '3':
             cellNum = 49;
-        break;       
+        break;      
     }
+
 
     //RANDOM 16 CELL WITH BOMB
     while(bombsPosition.length < NUM_BOMBS){
@@ -58,6 +59,15 @@ function play() {
     console.log(bombsPosition);
 
     const MAX_ATTEMPT = cellNum - NUM_BOMBS;
+    
+     //CELL CLICK CALLBACK
+    // function handleClick(){
+    //     // console.log(this.querySelector('span').innerHTML);
+    //     const num = this.querySelector('span').innerHTML;
+    //         this.classList.add('green');
+    //     this.removEventListener('click', handleClick);
+                
+    // }
 
     //DRAW CELL
     function drawCell(num){
@@ -68,23 +78,24 @@ function play() {
         cell.style.height = `calc(100% / ${cellForSide})`;
         cell.innerHTML = `<span>${num}</span>`;
 
+        // cell.addEventListener('click', handleClick);
+       
         cell.addEventListener('click', function(){
 
             if(bombsPosition.includes(num)){
                 this.classList.add('bomb');
                 endGame();
-            } else if(score == MAX_ATTEMPT){
-                this.classList.add('green');
+            } else if(score === MAX_ATTEMPT){ //! bug score 0 vuole un click in più
                 endGame();
             }else{
                 this.classList.add('green');
                 score++;   
             }
             
-            // console.log(num);
-            // console.log(score);
-
+            console.log(num);
+            console.log(score);
         })
+       
         return cell;
     }
 
@@ -104,6 +115,14 @@ function play() {
     //END GAME
     function endGame(){
         // console.log('endGame');
+
+        // const squares = document.querySelectorAll('.square');
+        // for(let i = 0; i < squares.length; i++){
+        //     squares[i].removeEventListener('click', handleClick);
+        //     const num = squares[i].querySelector('span').innerText;
+        //     // console.log('num');
+        // }
+
         const popup = document.querySelector('.popup');
         const close = document.querySelector('.close');
         const result = document.getElementById('result');
@@ -119,7 +138,7 @@ function play() {
         }else{
             // console.log('you lost' + score);
             popup.classList.add('active');
-            result.innerHTML = `Game Over ! Your score is: ${score}`;
+            result.innerHTML = `Game Over ! Your score is: ${score}`; //!bug score no - click bomba
             close.onclick = function(){
                 popup.classList.remove('active');
                  pField.innerHTML = '';
