@@ -40,12 +40,43 @@ attention.innerText = msgError;
 return attention;
 
 }
+ //CELL CLICK CALLBACK
+ function handleClick(){
+  console.log(this.querySelector('span').innerText);
+  const num = this.querySelector('span').innerText;
+      this.classList.add('green');
+  this.removEventListener('click', handleClick);
+  endGame();
+}
+
+ //END GAME
+ function endGame(){
+  console.log('endGame');
+  // const squares = document.getElementsByClassName('square');
+  // console.log('squares');
+  // for(let i = 0; i < squares.length; i++){
+  //     squares[i].removeEventListener('click',pickOut);
+  // }
+  const squares = document.querySelectorAll('.square');
+  for(let i = 0; i < squares.length; i++){
+      squares[i].removeEventListener('click', handleClick);
+      const num = squares[i].querySelector('span').innerText;
+      console.log('num');
+  // if(score == MAX_ATTEMPT){
+  //     console.log('you won');
+  // }else{
+  //     console.log('you lost');
+  // }
+}
+
 
 // function gameOver(square){
 //   if(square.classList.contains('bomb')){
 //     alert('Game Over !')
 //   } else{}
 // }
+
+}
 
 
 
