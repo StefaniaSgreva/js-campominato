@@ -40,14 +40,6 @@ attention.innerText = msgError;
 return attention;
 
 }
- //CELL CLICK CALLBACK
- function handleClick(){
-  console.log(this.querySelector('span').innerText);
-  const num = this.querySelector('span').innerText;
-      this.classList.add('green');
-  this.removEventListener('click', handleClick);
-  endGame();
-}
 
  
 
