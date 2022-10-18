@@ -60,11 +60,22 @@ function play() {
 
     const MAX_ATTEMPT = cellNum - NUM_BOMBS;
     
-     //CELL CLICK CALLBACK
+    //CELL CLICK CALLBACK
     // function handleClick(){
-    //     // console.log(this.querySelector('span').innerHTML);
+
+    //     console.log(this.querySelector('span').innerHTML);
     //     const num = this.querySelector('span').innerHTML;
+    //     if(bombsPosition.includes(num)){//!num non lo prende perchè non è dichiarato
+    //         this.classList.add('bomb');
+    //         endGame();
+    //     } else if(score === MAX_ATTEMPT){
+    //         endGame();
+    //     }else{
     //         this.classList.add('green');
+    //         score++; 
+    //     }
+    //     console.log(num);
+
     //     this.removEventListener('click', handleClick);
                 
     // }
@@ -79,6 +90,7 @@ function play() {
         cell.innerHTML = `<span>${num}</span>`;
 
         // cell.addEventListener('click', handleClick);
+        
        
         cell.addEventListener('click', function(){
 
@@ -92,8 +104,8 @@ function play() {
                 score++;   
             }
             
-            console.log(num);
-            console.log(score);
+            // console.log(num);
+            // console.log(score);
         })
        
         return cell;
