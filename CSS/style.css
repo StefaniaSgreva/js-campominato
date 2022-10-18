@@ -96,3 +96,28 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 } 
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    width: 700px;
+    height: 250px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1),
+    0 0 0 1000px rgba(246, 4, 138, 0.30);
+    visibility: hidden;
+}
+.popup.active{
+    visibility: visible;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: var(--yellow);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--white);
+}

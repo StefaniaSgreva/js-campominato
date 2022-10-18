@@ -18,8 +18,9 @@ function play() {
     // console.log('start playing . . .');
 
     // REMOVE WELCOME MESSAGE
-    const welcomeMsg = document.getElementById('welcome_msg');
-    welcomeMsg.innerHTML = '';
+    document.getElementById("welcome_msg").style.visibility = "hidden";
+    // const welcomeMsg = document.getElementById('welcome_msg');
+    // welcomeMsg.innerHTML = '';
 
     // 16 BOMB RANDOM
     const NUM_BOMBS = 16;
@@ -79,8 +80,8 @@ function play() {
                 score++;   
             }
             
-            console.log(num);
-            console.log(score);
+            // console.log(num);
+            // console.log(score);
 
         })
         return cell;
@@ -102,10 +103,19 @@ function play() {
     //END GAME
     function endGame(){
         console.log('endGame');
+        const popup = document.querySelector('.popup');
+        let close = document.querySelector('.close');
         if(score == MAX_ATTEMPT){
-            console.log('you won');
+            console.log('you won' + score);
+            popup.classList.add('active');
         }else{
-            console.log('you lost');
+            console.log('you lost' + score);
+            popup.classList.add('active');
+            close.onclick = function(){
+                popup.classList.remove('active');
+            pField.innerHTML = '';
+            document.getElementById("welcome_msg").style.visibility = "visible";
+            }  
         }
     }
 
