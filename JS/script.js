@@ -23,10 +23,10 @@ function play() {
     // welcomeMsg.innerHTML = '';
 
     // 16 BOMB RANDOM
-    const NUM_BOMBS = 16;
+    const NUM_BOMBS = 1;
     const bombsPosition = [];
 
-    let score = 0;
+    let score = 1;
 
     // 3 LEVELS GRIDS
     let cellNum;
@@ -109,6 +109,12 @@ function play() {
         if(score == MAX_ATTEMPT){
             console.log('you won' + score);
             popup.classList.add('active');
+            result.innerHTML = `You Win ! Your score is: ${score}`;
+            close.onclick = function(){
+                popup.classList.remove('active');
+                 pField.innerHTML = '';
+                document.getElementById("welcome_msg").style.visibility = "visible";
+            }  
         }else{
             console.log('you lost' + score);
             popup.classList.add('active');
