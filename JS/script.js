@@ -104,17 +104,19 @@ function play() {
     function endGame(){
         console.log('endGame');
         const popup = document.querySelector('.popup');
-        let close = document.querySelector('.close');
+        const close = document.querySelector('.close');
+        const result = document.getElementById('result');
         if(score == MAX_ATTEMPT){
             console.log('you won' + score);
             popup.classList.add('active');
         }else{
             console.log('you lost' + score);
             popup.classList.add('active');
+            result.innerHTML = `Game Over ! Your score is: ${score}`;
             close.onclick = function(){
                 popup.classList.remove('active');
-            pField.innerHTML = '';
-            document.getElementById("welcome_msg").style.visibility = "visible";
+                 pField.innerHTML = '';
+                document.getElementById("welcome_msg").style.visibility = "visible";
             }  
         }
     }
