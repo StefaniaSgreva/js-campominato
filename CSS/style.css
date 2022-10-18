@@ -85,13 +85,20 @@ main{
     /* box-shadow: 5px 5px 15px  rgba(0, 0, 0, 1.5) inset; */
 }
 .green{
-    background: var(--green);
-    /* background: linear-gradient(
+    background: linear-gradient(
         to top,
         var(--dark-green),
         var(--green)
-    );*/
+    );
 }
-.red{
+.bomb{
     background: var(--dark-pink);
-}
+  
+     background-image: linear-gradient(to top,
+    rgba(246, 4, 138, 0.30),
+    rgba(	248, 195, 203, 0.30)),
+    url('../img/bomb.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
