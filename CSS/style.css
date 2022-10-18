@@ -1,0 +1,97 @@
+/* GENERAL STYLES */
+:root{
+    --pink: #f8c3cb;
+    --blue: #95c3ec;
+    --green: #0DFC64;
+    --dark-green: #0CF2A2;
+    --yellow: #fad445;
+    --dark-pink: #f6048a;
+    --white: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+    background-image: url(../img/XP_Pink_bg.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+header, 
+footer{
+    background-color: var(--blue);
+    height: 70px;
+}
+.logo img{
+    width: 70%;
+}
+.level_picker{
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0 10px;
+    -webkit-appearence: button;
+    outline: none;
+}
+.level_picker:focus{
+    border: none;
+}
+main{
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+    position: relative;
+}
+#welcome_msg{
+    text-align: center;
+    color: var(--white);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--blue);
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#playing_field{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: var(--white);
+    width: 500px;
+    height: 500px;
+    border: 5px solid var(--blue);
+}
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid var(--blue);
+    /* background: linear-gradient(
+        to top,
+        #fafafa,
+        #d0d3d8
+    ); */
+    /* box-shadow: 5px 5px 15px  rgba(0, 0, 0, 1.5) inset; */
+}
+.green{
+    background: var(--green);
+    /* background: linear-gradient(
+        to top,
+        var(--dark-green),
+        var(--green)
+    );*/
+}
+.red{
+    background: var(--dark-pink);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font: Titillium Web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- My JS Library -->
+    <script src="./JS/myLibrary.js"></script>
+     <!-- My CSS -->
+     <link rel="stylesheet" href="./CSS/style.css">
+    <title>Minesweeper</title>
+</head>
+<body>
+    <div class="">
+        <!-- HEADER -->
+        <header class="d-flex justify-content-around align-items-center text-white">
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+            </div>
+            <div class="d-flex">
+                <select class="level_picker" name="level" id="level">
+                    <option value="1">Easy</option>
+                    <option value="2">Hard</option>
+                    <option value="3">Crazy</option>
+                </select>
+                <button class="btn btn-outline-light ms-2" id="play">Play</button>
+            </div>
+        </header>
+        <!-- MAIN -->
+        <main>
+            <h2 id="welcome_msg">Welcome fearless player<br>Choose a level and press play to start the game !</h2>
+            <div id="playing_field">
+
+            </div>
+        </main>
+        <!-- FOOTER -->
+        <footer></footer>
+    </div>
+
+    <!-- SCRIPT JS -->
+    <script src="./JS/script.js"></script>
+</body>
+</html>
