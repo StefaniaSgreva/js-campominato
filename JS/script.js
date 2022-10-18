@@ -4,9 +4,10 @@ CONSEGNA:
 xIn seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina, 
 xaltrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
 xLa partita termina quando il giocatore clicca su una bomba o raggiunge il numero massimo possibile di numeri consentiti.
-Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
+xAl termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
+
 BONUS:
-1- quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle
+x1- quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle
 2- quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 */ 
 
@@ -23,7 +24,7 @@ function play() {
     // welcomeMsg.innerHTML = '';
 
     // 16 BOMB RANDOM
-    const NUM_BOMBS = 1;
+    const NUM_BOMBS = 16;
     const bombsPosition = [];
 
     let score = 1;
@@ -102,12 +103,12 @@ function play() {
     drawGrid();
     //END GAME
     function endGame(){
-        console.log('endGame');
+        // console.log('endGame');
         const popup = document.querySelector('.popup');
         const close = document.querySelector('.close');
         const result = document.getElementById('result');
         if(score == MAX_ATTEMPT){
-            console.log('you won' + score);
+            // console.log('you won' + score);
             popup.classList.add('active');
             result.innerHTML = `You Win ! Your score is: ${score}`;
             close.onclick = function(){
@@ -116,7 +117,7 @@ function play() {
                 document.getElementById("welcome_msg").style.visibility = "visible";
             }  
         }else{
-            console.log('you lost' + score);
+            // console.log('you lost' + score);
             popup.classList.add('active');
             result.innerHTML = `Game Over ! Your score is: ${score}`;
             close.onclick = function(){
