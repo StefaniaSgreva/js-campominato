@@ -69,6 +69,7 @@ function play() {
 
             if(bombsPosition.includes(num)){
                 this.classList.add('bomb');
+                endGame();
             } else{
                 this.classList.add('green');
             }
@@ -90,6 +91,10 @@ function play() {
 
     //INVOKE THE FUNCTION
     drawGrid();
+    //END GAME
+    function endGame(){
+        console.log('endGame');
+    }
 
 }
 

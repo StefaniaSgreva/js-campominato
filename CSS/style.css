@@ -77,12 +77,6 @@ main{
     align-items: center;
     cursor: pointer;
     border: 2px solid var(--blue);
-    /* background: linear-gradient(
-        to top,
-        #fafafa,
-        #d0d3d8
-    ); */
-    /* box-shadow: 5px 5px 15px  rgba(0, 0, 0, 1.5) inset; */
 }
 .green{
     background: linear-gradient(
