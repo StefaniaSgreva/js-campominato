@@ -27,6 +27,8 @@ function play() {
     // 16 BOMB RANDOM
     const NUM_BOMBS = 16;
     const bombsPosition = [];
+
+    let score = 0;
     
     // 3 LEVELS GRIDS
     let cellNum;
@@ -56,6 +58,8 @@ function play() {
     }
     console.log(bombsPosition);
 
+    const MAX_ATTEMPT = cellNum - NUM_BOMBS;
+
     //DRAW CELL
     function drawCell(num){
         const cellForSide = Math.sqrt(cellNum);
@@ -70,8 +74,13 @@ function play() {
             if(bombsPosition.includes(num)){
                 this.classList.add('bomb');
                 endGame();
-            } else{
+            } else if(score == MAX_ATTEMPT){
                 this.classList.add('green');
+                endGame();
+            }else{
+                this.classList.add('green');
+                score++;
+                console.log('score');
             }
             console.log(num);
         })
@@ -94,7 +103,19 @@ function play() {
     //END GAME
     function endGame(){
         console.log('endGame');
+        if(score == MAX_ATTEMPT){
+            console.log('you won');
+        }else{
+            console.log('you lost');
+        }
     }
+    
+    
+    // function gameOver(square){
+//   if(square.classList.contains('bomb')){
+//     alert('Game Over !')
+//   } else{}
+// }
 
 }
 
